@@ -1,0 +1,36 @@
+{
+  "name": "@tiaanduplessis/conqueue",
+  "version": "1.0.0",
+  "description": "Simple add only async task queue with concurrency support",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/tiaanduplessis/conqueue",
+    "type": "git"
+  },
+  "homepage": "https://github.com/tiaanduplessis/conqueue",
+  "bugs": "https://github.com/tiaanduplessis/conqueue",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "jest",
+    "lint": "standard index.js",
+    "lint:fix": "npm run lint -- --fix",
+    "start": "npm run test",
+    "pretest": "npm run format && npm run lint:fix",
+    "format": "prettier --print-width 100 --semi false --single-quote --write index.js",
+    "precommit": "npm test",
+    "release": "npm test && git commit -am $npm_package_version && git tag $npm_package_version && git push --tags && npm publish --access=public"
+  },
+  "author": "tiaanduplessis <tiaanduplessis@hotmail.com>",
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "jest": "^20.0.1",
+    "prettier": "~1.5.2",
+    "standard": "^10.0.2"
+  },
+  "dependencies": {
+    "@tiaanduplessis/promisify": "^1.0.0"
+  }
+}
